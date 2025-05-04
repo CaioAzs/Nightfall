@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c28433d0d63d44f889cc5739a38c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 5
   jumpForce: 15
   isJump: 0
   inFloor: 1
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1748a97aec0d0374ca612b327f1e5bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 0.2
+  attackCooldown: 1
   firePoint: {fileID: 3016825132734057004}
   projectilePrefab: {fileID: 1832653736614029464, guid: 24a3a4c948c369a438e5583ec9ed5b34, type: 3}
 --- !u!95 &8548842485405785817
