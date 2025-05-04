@@ -1,61 +1,61 @@
 fileFormatVersion: 2
-guid: f564e2ee1759f634aa723100a5131a29
+guid: e338cd260b3a238429b09345e501924d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2625406059805260970
-    second: Shot_0
+      213: -2374555911719812991
+    second: DevastatorDeath_0
   - first:
-      213: -8502188156620399341
-    second: Shot_1
+      213: -172752571058915587
+    second: DevastatorDeath_1
   - first:
-      213: -3450133095002218573
-    second: Shot_2
+      213: 6598336227934508750
+    second: DevastatorDeath_2
   - first:
-      213: -3825235277515807119
-    second: Shot_3
+      213: -5078770878733212723
+    second: DevastatorDeath_3
   - first:
-      213: 7249728514726557410
-    second: Shot_4
+      213: 3329426213026785430
+    second: DevastatorDeath_4
   - first:
-      213: -8718629140287177905
-    second: Shot_5
+      213: -3556335150418269904
+    second: DevastatorDeath_5
   - first:
-      213: 6901891030921552814
-    second: Shot_6
+      213: 7591672269610154752
+    second: DevastatorDeath_6
   - first:
-      213: 6618073059492648300
-    second: Shot_7
+      213: 875365858206798185
+    second: DevastatorDeath_7
   - first:
-      213: -6608010398135692439
-    second: Shot_8
+      213: -516970309099865684
+    second: DevastatorDeath_8
   - first:
-      213: 991864324480039582
-    second: Shot_9
+      213: -853906159287008349
+    second: DevastatorDeath_9
   - first:
-      213: -3490810791544430110
-    second: Shot_10
+      213: 1018593439425848814
+    second: DevastatorDeath_10
   - first:
-      213: -7823712563714557925
-    second: Shot_11
+      213: -4663019316972067164
+    second: DevastatorDeath_11
   - first:
-      213: -4840549818619743816
-    second: Shot_12
+      213: -6155723605150081931
+    second: DevastatorDeath_12
   - first:
-      213: 7549699604794384911
-    second: Shot_13
+      213: 8405068969463767099
+    second: DevastatorDeath_13
   - first:
-      213: 249811479472983424
-    second: Shot_14
+      213: -4438293327502842853
+    second: DevastatorDeath_14
   - first:
-      213: 5233705947871964281
-    second: Shot_15
+      213: 3077574266922497169
+    second: DevastatorDeath_15
   - first:
-      213: 147499970448513179
-    second: Shot_16
+      213: 3894370118931030693
+    second: DevastatorDeath_16
   - first:
-      213: 569520843046233903
-    second: Shot_17
+      213: -6798803127169587077
+    second: DevastatorDeath_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -151,397 +151,397 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shot_0
+      name: DevastatorDeath_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 0
-        width: 30
-        height: 70
+        x: 0
+        y: 15
+        width: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 653462e391fa09bd0800000000000000
-      internalID: -2625406059805260970
+      spriteID: 18003aeaaf1eb0fd0800000000000000
+      internalID: -2374555911719812991
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_1
+      name: DevastatorDeath_1
       rect:
         serializedVersion: 2
-        x: 174
+        x: 0
         y: 0
-        width: 26
-        height: 70
+        width: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 31d9b170be8220a80800000000000000
-      internalID: -8502188156620399341
+      spriteID: df67fffa3724a9df0800000000000000
+      internalID: -172752571058915587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_2
+      name: DevastatorDeath_2
       rect:
         serializedVersion: 2
-        x: 306
-        y: 0
-        width: 20
-        height: 70
+        x: 16
+        y: 15
+        width: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3bfd29cca3aae10d0800000000000000
-      internalID: -3450133095002218573
+      spriteID: ec690aef6dff19b50800000000000000
+      internalID: 6598336227934508750
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_3
+      name: DevastatorDeath_3
       rect:
         serializedVersion: 2
-        x: 429
+        x: 16
         y: 0
-        width: 28
-        height: 70
+        width: 15
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 176a06538c80aeac0800000000000000
-      internalID: -3825235277515807119
+      spriteID: dc322855bc49489b0800000000000000
+      internalID: -5078770878733212723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_4
+      name: DevastatorDeath_4
       rect:
         serializedVersion: 2
-        x: 556
-        y: 0
-        width: 35
-        height: 70
+        x: 32
+        y: 15
+        width: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e6fb466ca53c9460800000000000000
-      internalID: 7249728514726557410
+      spriteID: 698e55d208f743e20800000000000000
+      internalID: 3329426213026785430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_5
+      name: DevastatorDeath_5
       rect:
         serializedVersion: 2
-        x: 682
+        x: 32
         y: 0
-        width: 58
-        height: 70
+        width: 15
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f4b30dc7df4310780800000000000000
-      internalID: -8718629140287177905
+      spriteID: 0396511e50c55aec0800000000000000
+      internalID: -3556335150418269904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_6
+      name: DevastatorDeath_6
       rect:
         serializedVersion: 2
-        x: 810
-        y: 0
-        width: 58
-        height: 70
+        x: 48
+        y: 15
+        width: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ea3a888235178cf50800000000000000
-      internalID: 6901891030921552814
+      spriteID: 00bfb41f4b90b5960800000000000000
+      internalID: 7591672269610154752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_7
+      name: DevastatorDeath_7
       rect:
         serializedVersion: 2
-        x: 938
-        y: 0
-        width: 60
-        height: 70
+        x: 64
+        y: 15
+        width: 15
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c6554a0326e18db50800000000000000
-      internalID: 6618073059492648300
+      spriteID: 961dbe23c9ce52c00800000000000000
+      internalID: 875365858206798185
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_8
+      name: DevastatorDeath_8
       rect:
         serializedVersion: 2
-        x: 1066
-        y: 0
-        width: 58
-        height: 70
+        x: 80
+        y: 15
+        width: 15
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 963d80bbd81ab44a0800000000000000
-      internalID: -6608010398135692439
+      spriteID: ca9bdae2e3a53d8f0800000000000000
+      internalID: -516970309099865684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_9
+      name: DevastatorDeath_9
       rect:
         serializedVersion: 2
-        x: 1123
-        y: 47
-        width: 13
+        x: 96
+        y: 15
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a30e205fd05624f0800000000000000
+      internalID: -853906159287008349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorDeath_10
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 15
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee5658f1655c22e00800000000000000
+      internalID: 1018593439425848814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorDeath_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 15
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a6681f03a0a94fb0800000000000000
+      internalID: -4663019316972067164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorDeath_12
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 15
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57cda8bdef9729aa0800000000000000
+      internalID: -6155723605150081931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorDeath_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30eb8d12bdc4a470800000000000000
+      internalID: 8405068969463767099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorDeath_14
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 17
         height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9af306195fc3cd00800000000000000
-      internalID: 991864324480039582
+      spriteID: b14e435dbb30862c0800000000000000
+      internalID: -4438293327502842853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shot_10
+      name: DevastatorDeath_15
       rect:
         serializedVersion: 2
-        x: 1194
+        x: 79
         y: 0
-        width: 54
-        height: 65
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2e1e4e784162e8fc0800000000000000
-      internalID: -3490810791544430110
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_11
-      rect:
-        serializedVersion: 2
-        x: 1253
-        y: 55
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b18780700e69c6390800000000000000
-      internalID: -7823712563714557925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_12
-      rect:
-        serializedVersion: 2
-        x: 1322
-        y: 0
-        width: 51
-        height: 66
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8b1b6971699e2dcb0800000000000000
-      internalID: -4840549818619743816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_13
-      rect:
-        serializedVersion: 2
-        x: 1384
-        y: 57
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f022da06acbe5c860800000000000000
-      internalID: 7549699604794384911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_14
-      rect:
-        serializedVersion: 2
-        x: 1450
-        y: 0
-        width: 78
-        height: 65
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 08d4dce8732877300800000000000000
-      internalID: 249811479472983424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_15
-      rect:
-        serializedVersion: 2
-        x: 1254
-        y: 45
-        width: 6
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 97ce1c984dbd1a840800000000000000
-      internalID: 5233705947871964281
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: projectile
-      rect:
-        serializedVersion: 2
-        x: 1257
-        y: 51
-        width: 10
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b98d6fe01760c0200800000000000000
-      internalID: 147499970448513179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shot_17
-      rect:
-        serializedVersion: 2
-        x: 1383
-        y: 45
-        width: 14
+        width: 17
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f27a3f5703857e700800000000000000
-      internalID: 569520843046233903
+      spriteID: 1947cc57d7db5ba20800000000000000
+      internalID: 3077574266922497169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorDeath_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2a7ca6df49b0630800000000000000
+      internalID: 3894370118931030693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorDeath_17
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 0
+        width: 33
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b78ed33d39cc5a1a0800000000000000
+      internalID: -6798803127169587077
       vertices: []
       indices: 
       edges: []
@@ -550,7 +550,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 43f9b56a51f8e7047a62a566254ed6bf
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -560,24 +560,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Shot_0: -2625406059805260970
-      Shot_1: -8502188156620399341
-      Shot_10: -3490810791544430110
-      Shot_11: -7823712563714557925
-      Shot_12: -4840549818619743816
-      Shot_13: 7549699604794384911
-      Shot_14: 249811479472983424
-      Shot_15: 5233705947871964281
-      Shot_17: 569520843046233903
-      Shot_2: -3450133095002218573
-      Shot_3: -3825235277515807119
-      Shot_4: 7249728514726557410
-      Shot_5: -8718629140287177905
-      Shot_6: 6901891030921552814
-      Shot_7: 6618073059492648300
-      Shot_8: -6608010398135692439
-      Shot_9: 991864324480039582
-      projectile: 147499970448513179
+      DevastatorDeath_0: -2374555911719812991
+      DevastatorDeath_1: -172752571058915587
+      DevastatorDeath_10: 1018593439425848814
+      DevastatorDeath_11: -4663019316972067164
+      DevastatorDeath_12: -6155723605150081931
+      DevastatorDeath_13: 8405068969463767099
+      DevastatorDeath_14: -4438293327502842853
+      DevastatorDeath_15: 3077574266922497169
+      DevastatorDeath_16: 3894370118931030693
+      DevastatorDeath_17: -6798803127169587077
+      DevastatorDeath_2: 6598336227934508750
+      DevastatorDeath_3: -5078770878733212723
+      DevastatorDeath_4: 3329426213026785430
+      DevastatorDeath_5: -3556335150418269904
+      DevastatorDeath_6: 7591672269610154752
+      DevastatorDeath_7: 875365858206798185
+      DevastatorDeath_8: -516970309099865684
+      DevastatorDeath_9: -853906159287008349
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

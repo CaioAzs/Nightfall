@@ -1,19 +1,13 @@
 fileFormatVersion: 2
-guid: 1d4a1e91d2067b54fafc458fd2a76418
+guid: 17407346f2348c1488fd95a14f4107b2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2048800907179887802
-    second: Hurt_0
+      213: -2495486123629855592
+    second: DevastatorIdle_0
   - first:
-      213: 490842205202310979
-    second: Hurt_1
-  - first:
-      213: -3720053754089064719
-    second: Hurt_2
-  - first:
-      213: 5649970053243570431
-    second: Hurt_3
+      213: 489514756373312978
+    second: DevastatorIdle_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,89 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hurt_0
+      name: DevastatorIdle_0
       rect:
         serializedVersion: 2
-        x: 37
+        x: 0
         y: 0
-        width: 44
-        height: 70
+        width: 15
+        height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6437b001e623193e0800000000000000
-      internalID: -2048800907179887802
+      spriteID: 89c302b97904e5dd0800000000000000
+      internalID: -2495486123629855592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hurt_1
+      name: DevastatorIdle_1
       rect:
         serializedVersion: 2
-        x: 161
+        x: 16
         y: 0
-        width: 42
-        height: 70
+        width: 15
+        height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3476ad19262dfc600800000000000000
-      internalID: 490842205202310979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hurt_2
-      rect:
-        serializedVersion: 2
-        x: 285
-        y: 0
-        width: 46
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1f6b92202d6bf5cc0800000000000000
-      internalID: -3720053754089064719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Hurt_3
-      rect:
-        serializedVersion: 2
-        x: 409
-        y: 0
-        width: 50
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ff88d2f14d9b86e40800000000000000
-      internalID: 5649970053243570431
+      spriteID: 2d571fdc31b1bc600800000000000000
+      internalID: 489514756373312978
       vertices: []
       indices: 
       edges: []
@@ -200,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c3c8e162f3375cc449f8121576daceb6
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hurt_0: -2048800907179887802
-      Hurt_1: 490842205202310979
-      Hurt_2: -3720053754089064719
-      Hurt_3: 5649970053243570431
+      DevastatorIdle_0: -2495486123629855592
+      DevastatorIdle_1: 489514756373312978
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

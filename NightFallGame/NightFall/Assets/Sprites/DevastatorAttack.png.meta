@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 1d4a1e91d2067b54fafc458fd2a76418
+guid: 727a55a23233243489feff78eca50a89
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2048800907179887802
-    second: Hurt_0
+      213: 4130183627098132950
+    second: DevastatorAttack_0
   - first:
-      213: 490842205202310979
-    second: Hurt_1
+      213: -2660131585282127181
+    second: DevastatorAttack_1
   - first:
-      213: -3720053754089064719
-    second: Hurt_2
+      213: -455203382188248817
+    second: DevastatorAttack_2
   - first:
-      213: 5649970053243570431
-    second: Hurt_3
+      213: -1011680187526512175
+    second: DevastatorAttack_3
+  - first:
+      213: 8403329882134776580
+    second: DevastatorAttack_4
+  - first:
+      213: -2810891055018915850
+    second: DevastatorAttack_5
+  - first:
+      213: 2231626228688717890
+    second: DevastatorAttack_6
+  - first:
+      213: 1196271283380103072
+    second: DevastatorAttack_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hurt_0
+      name: DevastatorAttack_0
       rect:
         serializedVersion: 2
-        x: 37
+        x: 0
         y: 0
-        width: 44
-        height: 70
+        width: 15
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +136,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6437b001e623193e0800000000000000
-      internalID: -2048800907179887802
+      spriteID: 6d1915e402c515930800000000000000
+      internalID: 4130183627098132950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hurt_1
+      name: DevastatorAttack_1
       rect:
         serializedVersion: 2
-        x: 161
+        x: 16
         y: 0
-        width: 42
-        height: 70
+        width: 15
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3476ad19262dfc600800000000000000
-      internalID: 490842205202310979
+      spriteID: 3ba467bca60551bd0800000000000000
+      internalID: -2660131585282127181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hurt_2
+      name: DevastatorAttack_2
       rect:
         serializedVersion: 2
-        x: 285
+        x: 32
         y: 0
-        width: 46
-        height: 70
+        width: 15
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,20 +180,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f6b92202d6bf5cc0800000000000000
-      internalID: -3720053754089064719
+      spriteID: f01fc188feacea9f0800000000000000
+      internalID: -455203382188248817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hurt_3
+      name: DevastatorAttack_3
       rect:
         serializedVersion: 2
-        x: 409
+        x: 49
         y: 0
-        width: 50
-        height: 70
+        width: 13
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,8 +202,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff88d2f14d9b86e40800000000000000
-      internalID: 5649970053243570431
+      spriteID: 1d18e24ca3ac5f1f0800000000000000
+      internalID: -1011680187526512175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorAttack_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b811b4100ae9470800000000000000
+      internalID: 8403329882134776580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorAttack_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f7464b6a75bdf8d0800000000000000
+      internalID: -2810891055018915850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorAttack_6
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2488f683b3458fe10800000000000000
+      internalID: 2231626228688717890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DevastatorAttack_7
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a72fd4e4620a9010800000000000000
+      internalID: 1196271283380103072
       vertices: []
       indices: 
       edges: []
@@ -210,10 +310,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hurt_0: -2048800907179887802
-      Hurt_1: 490842205202310979
-      Hurt_2: -3720053754089064719
-      Hurt_3: 5649970053243570431
+      DevastatorAttack_0: 4130183627098132950
+      DevastatorAttack_1: -2660131585282127181
+      DevastatorAttack_2: -455203382188248817
+      DevastatorAttack_3: -1011680187526512175
+      DevastatorAttack_4: 8403329882134776580
+      DevastatorAttack_5: -2810891055018915850
+      DevastatorAttack_6: 2231626228688717890
+      DevastatorAttack_7: 1196271283380103072
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
