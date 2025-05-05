@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRend;
+    [SerializeField] private EnemyPatrol enemyPatrol; //Adicionado
 
     private bool invulnerable;
 
@@ -42,8 +43,11 @@ public class Health : MonoBehaviour
                 if(GetComponent<PlayerMovement>() != null)
                     GetComponent<PlayerMovement>().enabled = false;
 
-                if(GetComponentInParent<EnemyPatrol>() != null)
-                    GetComponentInParent<EnemyPatrol>().enabled = false; // ajustar aqui
+                if(enemyPatrol != null) // Adicionado
+                    enemyPatrol.enabled = false;
+
+                // if(GetComponentInParent<EnemyPatrol>() != null)
+                //     GetComponentInParent<EnemyPatrol>().enabled = false; // ajustar aqui
 
                 if(GetComponent<MeleeEnemy>() != null)
                     GetComponent<MeleeEnemy>().enabled = false;
@@ -67,5 +71,11 @@ public class Health : MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
+    }
+
+
+    public void SetEnemyPatrol(EnemyPatrol patrol) // Adicionado
+    {
+        enemyPatrol = patrol;
     }
 }

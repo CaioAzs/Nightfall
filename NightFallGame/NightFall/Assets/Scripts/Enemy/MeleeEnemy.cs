@@ -11,12 +11,28 @@ public class MeleeEnemy : MonoBehaviour
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
     private Health playerHealth;
-    private EnemyPatrol enemyPatrol;
+    //private EnemyPatrol enemyPatrol;
+    [SerializeField] private EnemyPatrol enemyPatrol; // Adicionado
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol>(); // ajustar aqui
+        //enemyPatrol = GetComponentInParent<EnemyPatrol>(); // ajustar aqui
+        
+        if (enemyPatrol == null)
+        {
+            GameObject patrolObj = GameObject.FindGameObjectWithTag("EnemyPatrol");
+            if (patrolObj != null)
+                enemyPatrol = patrolObj.GetComponent<EnemyPatrol>();
+        }
+        
+        // Configura a referência no componente Health, se existir
+        Health myHealth = GetComponent<Health>();
+        if (myHealth != null && enemyPatrol != null)
+        {
+            myHealth.SetEnemyPatrol(enemyPatrol);
+        }
+        
     }
 
     private void Update()
@@ -43,10 +59,19 @@ public class MeleeEnemy : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
             0, Vector2.left, 0, playerLayer);
 
-        if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
+        if (hit.collider != null){
+            Health detectedHealth = hit.transform.GetComponent<Health>();
 
-        return hit.collider != null;
+            if(detectedHealth != null && detectedHealth.currentHealth > 0){
+                playerHealth = detectedHealth;
+                return true;
+            } else{
+                return false;
+            }
+        }
+
+        return false;
+
     }
 
     private void OnDrawGizmos()
@@ -58,7 +83,8 @@ public class MeleeEnemy : MonoBehaviour
 
     private void DamagePlayer()
     {
-        if (PlayerInSight())
+        if(PlayerInSight() && playerHealth != null && playerHealth.currentHealth > 0){
             playerHealth.TakeDamage(damage);
+        }
     }
 }
