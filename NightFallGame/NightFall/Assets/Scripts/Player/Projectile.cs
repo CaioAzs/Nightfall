@@ -1,8 +1,10 @@
+
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private int damage = 1; // Dano que o projétil causa
     private float direction;
     private bool hit;
     private float lifetime;
@@ -29,40 +31,56 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(hit) return;
-        //Debug.Log("Colisão detectada com: " + collision.gameObject.name);
         hit = true;
         anim.SetTrigger("explode");
         boxCollider.enabled = false;
         
         if (collision.CompareTag("Enemy"))
         {
-            // Tenta obter o componente EnemyHealth em vez de Health
             EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
             
-            // Verifica se encontrou o componente antes de tentar usar
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(1);
+                enemyHealth.TakeDamage(damage);
             }
             else
             {
-                // Tenta procurar nos pais ou filhos, caso o collider esteja em um objeto diferente
                 enemyHealth = collision.GetComponentInParent<EnemyHealth>();
                 if (enemyHealth != null)
                 {
-                    enemyHealth.TakeDamage(1);
+                    enemyHealth.TakeDamage(damage);
                 }
                 else
                 {
-                    // Tenta encontrar nos filhos
                     enemyHealth = collision.GetComponentInChildren<EnemyHealth>();
                     if (enemyHealth != null)
                     {
-                        enemyHealth.TakeDamage(1);
+                        enemyHealth.TakeDamage(damage);
                     }
-                    else
+                }
+            }
+        }
+        else if (collision.CompareTag("Boss"))
+        {
+            BossHealth bossHealth = collision.GetComponent<BossHealth>();
+            
+            if (bossHealth != null)
+            {
+                bossHealth.TakeDamage(damage);
+            }
+            else
+            {
+                bossHealth = collision.GetComponentInParent<BossHealth>();
+                if (bossHealth != null)
+                {
+                    bossHealth.TakeDamage(damage);
+                }
+                else
+                {
+                    bossHealth = collision.GetComponentInChildren<BossHealth>();
+                    if (bossHealth != null)
                     {
-                        Debug.LogWarning("Componente EnemyHealth não encontrado no inimigo: " + collision.gameObject.name);
+                        bossHealth.TakeDamage(damage);
                     }
                 }
             }
@@ -86,7 +104,6 @@ public class Projectile : MonoBehaviour
 
     private void Deactivate()
     {
-        //Debug.Log("Entrou no Deactivate ");
         gameObject.SetActive(false);
     }
 }

@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float startingHealth;
     public float currentHealth {get; private set; }
     private Animator anim;
-    private bool dead;
+    public bool dead;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
@@ -15,6 +15,10 @@ public class PlayerHealth : MonoBehaviour
     private SpriteRenderer spriteRend;
 
     private bool invulnerable;
+
+    // Evento que será chamado quando o player morrer
+    public delegate void PlayerDeathEvent(bool isDead);
+    public static event PlayerDeathEvent OnPlayerDeath;
 
     private void Awake()
     {
@@ -44,10 +48,14 @@ public class PlayerHealth : MonoBehaviour
                 if(GetComponent<PlayerMovement>() != null)
                     GetComponent<PlayerMovement>().enabled = false;
                 
-                // Aqui  adicionar lógica adicional de game over
-                // Por exemplo: mostrar tela de game over, reiniciar nível, etc.
-                
                 dead = true;
+                
+                // Dispara o evento de morte do player
+                // Qualquer objeto (incluindo o boss) que estiver "ouvindo" este evento será notificado
+                if (OnPlayerDeath != null)
+                {
+                    OnPlayerDeath(dead);
+                }
             }
         }
     }
@@ -71,7 +79,6 @@ public class PlayerHealth : MonoBehaviour
     {
         return dead;
     }
-    
     
     // Método para redefinir player após game over
     public void ResetPlayer()

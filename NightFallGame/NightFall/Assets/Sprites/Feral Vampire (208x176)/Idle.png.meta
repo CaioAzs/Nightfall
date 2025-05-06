@@ -131,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Boss_Idle_0
       rect:
         serializedVersion: 2
         x: 62
@@ -298,7 +298,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Idle_0: 4723107735738678597
+      Boss_Idle_0: 4723107735738678597
       Idle_1: -7385789195546760866
       Idle_2: 3234629978573100161
       Idle_3: 6373048116405451881
