@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 82e5ef1002e437c4e9a201170c646d1a
+guid: 42b27a89a571dfb499291024eb69ead4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7497754770169248434
-    second: factoryLightEffects_0
-  - first:
-      213: 2941700044683653871
-    second: factoryLightEffects_1
-  - first:
-      213: 5293025304744527160
-    second: factoryLightEffects_2
-  - first:
-      213: -948790874955900261
-    second: factoryLightEffects_3
+      213: 7153985450617964086
+    second: documento4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: factoryLightEffects_0
+      name: documento4_0
       rect:
         serializedVersion: 2
-        x: 36
-        y: 665
-        width: 465
-        height: 299
+        x: 0
+        y: 0
+        width: 957
+        height: 478
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2babde81d306d0860800000000000000
-      internalID: 7497754770169248434
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: factoryLightEffects_1
-      rect:
-        serializedVersion: 2
-        x: 563
-        y: 666
-        width: 7
-        height: 278
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fe2be17da9403d820800000000000000
-      internalID: 2941700044683653871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: factoryLightEffects_2
-      rect:
-        serializedVersion: 2
-        x: 612
-        y: 718
-        width: 367
-        height: 193
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8358374987a947940800000000000000
-      internalID: 5293025304744527160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: factoryLightEffects_3
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 262
-        width: 565
-        height: 331
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b9a1f14e9b735d2f0800000000000000
-      internalID: -948790874955900261
+      spriteID: 63685682ddf084360800000000000000
+      internalID: 7153985450617964086
       vertices: []
       indices: 
       edges: []
@@ -209,11 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      factoryLightEffects_0: 7497754770169248434
-      factoryLightEffects_1: 2941700044683653871
-      factoryLightEffects_2: 5293025304744527160
-      factoryLightEffects_3: -948790874955900261
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
