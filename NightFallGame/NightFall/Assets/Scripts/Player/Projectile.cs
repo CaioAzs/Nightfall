@@ -15,6 +15,7 @@ public class Projectile : MonoBehaviour
         anim = GetComponent<Animator>();
         boxCollider = GetComponent<BoxCollider2D>();
     }
+    
     private void Update()
     {
         if (hit) return;
@@ -33,11 +34,40 @@ public class Projectile : MonoBehaviour
         anim.SetTrigger("explode");
         boxCollider.enabled = false;
         
-        if (collision.tag == "Enemy")
-            collision.GetComponent<Health>().TakeDamage(1);
-        
+        if (collision.CompareTag("Enemy"))
+        {
+            // Tenta obter o componente EnemyHealth em vez de Health
+            EnemyHealth enemyHealth = collision.GetComponent<EnemyHealth>();
+            
+            // Verifica se encontrou o componente antes de tentar usar
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(1);
+            }
+            else
+            {
+                // Tenta procurar nos pais ou filhos, caso o collider esteja em um objeto diferente
+                enemyHealth = collision.GetComponentInParent<EnemyHealth>();
+                if (enemyHealth != null)
+                {
+                    enemyHealth.TakeDamage(1);
+                }
+                else
+                {
+                    // Tenta encontrar nos filhos
+                    enemyHealth = collision.GetComponentInChildren<EnemyHealth>();
+                    if (enemyHealth != null)
+                    {
+                        enemyHealth.TakeDamage(1);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Componente EnemyHealth não encontrado no inimigo: " + collision.gameObject.name);
+                    }
+                }
+            }
+        }
     }
-
     
     public void SetDirection(float _direction)
     {
@@ -48,7 +78,6 @@ public class Projectile : MonoBehaviour
         if (boxCollider != null)
             boxCollider.enabled = true;
         
-
         if (_direction > 0)
             transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);
         else

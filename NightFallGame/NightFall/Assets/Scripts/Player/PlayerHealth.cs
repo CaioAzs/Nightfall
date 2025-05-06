@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [Header ("Health")]
     [SerializeField] private float startingHealth;
@@ -13,22 +13,14 @@ public class Health : MonoBehaviour
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRend;
-    [SerializeField] private EnemyPatrol enemyPatrol;
+
     private bool invulnerable;
-    [SerializeField] private bool isEnemy = false;
 
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
-
-        if (GetComponent<MeleeEnemy>() != null || 
-            CompareTag("Enemy") || 
-            gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            isEnemy = true;
-        }
     }
 
     public void TakeDamage(float _damage)
@@ -38,6 +30,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
+            // Player foi atingido, mas ainda está vivo
             anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
         }
@@ -46,28 +39,14 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 anim.SetTrigger("die");
-
+                
+                // Desabilitar movimento do player
                 if(GetComponent<PlayerMovement>() != null)
                     GetComponent<PlayerMovement>().enabled = false;
-
-                if(enemyPatrol != null) 
-                    enemyPatrol.enabled = false;
-
-                if(GetComponent<MeleeEnemy>() != null)
-                    GetComponent<MeleeEnemy>().enabled = false;
-
-
-                if (isEnemy)
-                {
-                    // Desativar todos os colliders do inimigo
-                    Collider2D[] colliders = GetComponents<Collider2D>();
-                    foreach (Collider2D collider in colliders)
-                    {
-                        collider.enabled = false;
-                    }
-                }
-
-
+                
+                // Aqui  adicionar lógica adicional de game over
+                // Por exemplo: mostrar tela de game over, reiniciar nível, etc.
+                
                 dead = true;
             }
         }
@@ -88,9 +67,20 @@ public class Health : MonoBehaviour
         invulnerable = false;
     }
 
-
-    public void SetEnemyPatrol(EnemyPatrol patrol)
+    public bool IsDead()
     {
-        enemyPatrol = patrol;
+        return dead;
+    }
+    
+    
+    // Método para redefinir player após game over
+    public void ResetPlayer()
+    {
+        dead = false;
+        currentHealth = startingHealth;
+        
+        // Reativa o componente de movimento
+        if(GetComponent<PlayerMovement>() != null)
+            GetComponent<PlayerMovement>().enabled = true;
     }
 }

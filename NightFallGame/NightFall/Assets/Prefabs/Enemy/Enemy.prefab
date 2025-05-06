@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 6862144338293507402}
   - component: {fileID: 5906006810366217714}
   - component: {fileID: 1299298283846911225}
-  - component: {fileID: 6255428087986520806}
   - component: {fileID: 4333472671632951984}
+  - component: {fileID: 8971799527818396078}
+  - component: {fileID: 3809975369527563660}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -143,7 +144,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -159,21 +160,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.53187144, y: 0.9030846}
   m_EdgeRadius: 0
---- !u!114 &6255428087986520806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2464588544861563287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c246056f32e0fb04ea25218026f6493e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
-  iFramesDuration: 1
-  numberOfFlashes: 1
 --- !u!114 &4333472671632951984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,3 +180,47 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+  enemyPatrol: {fileID: 0}
+--- !u!50 &8971799527818396078
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464588544861563287}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &3809975369527563660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2464588544861563287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6820b87dc38e3104e8c8aeb2dc2d760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 4
+  iFramesDuration: 2
+  numberOfFlashes: 1
+  enemyPatrol: {fileID: 0}
