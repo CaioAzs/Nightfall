@@ -17,9 +17,9 @@ TagManager:
   - Enemy
   - Projectile
   - Player
-  - 
-  - 
-  - 
+  - BackGround
+  - Decorations
+  - FrontDecorations
   - 
   - 
   - 

@@ -1009,7 +1009,43 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      factoryTiles_0: -7086201508293717857
+      factoryTiles_1: 5375187706050302312
+      factoryTiles_10: -1146835413847099610
+      factoryTiles_11: -676613648924868172
+      factoryTiles_12: 5155800724199572133
+      factoryTiles_13: -6240983360213614043
+      factoryTiles_14: -2759271602839760249
+      factoryTiles_15: -6496882997893818611
+      factoryTiles_16: -2246973470025404660
+      factoryTiles_17: 4010262514499180039
+      factoryTiles_18: 6965713992034396385
+      factoryTiles_19: -4799451894923459704
+      factoryTiles_2: 220786432994411875
+      factoryTiles_20: 149389928328954155
+      factoryTiles_21: -6049733676520268152
+      factoryTiles_22: 32261715939539309
+      factoryTiles_23: -6243474068654328247
+      factoryTiles_24: 6090362068102980448
+      factoryTiles_25: -6456666142821582203
+      factoryTiles_26: 8381848449091431789
+      factoryTiles_27: -3996763896091575714
+      factoryTiles_28: -8011515266534299492
+      factoryTiles_29: -8581989481147958273
+      factoryTiles_3: -7647304956188690139
+      factoryTiles_30: -467022800971212228
+      factoryTiles_31: 7457840863079421330
+      factoryTiles_32: -3583036448568358905
+      factoryTiles_33: -3557296405824527961
+      factoryTiles_34: 6604477889436503949
+      factoryTiles_35: -2098829587884780578
+      factoryTiles_4: 4571658927327002722
+      factoryTiles_5: 8127313678365375224
+      factoryTiles_6: 8510238371817513490
+      factoryTiles_7: -9008297797936270085
+      factoryTiles_8: 5094527369596327543
+      factoryTiles_9: 1186041483159925582
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
