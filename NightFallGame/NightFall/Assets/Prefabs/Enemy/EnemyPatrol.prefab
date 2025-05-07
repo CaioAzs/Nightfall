@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8067348018101266091}
   m_Layer: 0
   m_Name: EnemyPatrol
-  m_TagString: Untagged
+  m_TagString: EnemyPatrol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   rightEdge: {fileID: 5999557090198199348}
   enemy: {fileID: 0}
   speed: 3
-  idleDuration: 0
+  idleDuration: 1
   anim: {fileID: 0}
 --- !u!1 &7810332721740663419
 GameObject:

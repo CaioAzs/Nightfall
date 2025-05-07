@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4353634255543436022}
   - component: {fileID: 8596107168971959284}
   - component: {fileID: 8548842485405785817}
-  - component: {fileID: 8909401549681056259}
+  - component: {fileID: 8924607820840723333}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.5, y: -2.86, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4607238325989827625}
@@ -171,8 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c28433d0d63d44f889cc5739a38c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 15
+  speed: 7
+  jumpForce: 20
   isJump: 0
   inFloor: 1
   groundCheck: {fileID: 4607238325989827625}
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1748a97aec0d0374ca612b327f1e5bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 1
+  attackCooldown: 0.5
   firePoint: {fileID: 3016825132734057004}
   projectilePrefab: {fileID: 1832653736614029464, guid: 24a3a4c948c369a438e5583ec9ed5b34, type: 3}
 --- !u!95 &8548842485405785817
@@ -216,7 +216,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8909401549681056259
+--- !u!114 &8924607820840723333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 483089386182252576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c246056f32e0fb04ea25218026f6493e, type: 3}
+  m_Script: {fileID: 11500000, guid: fd9df247a66ae8c4e93bbce8ba357fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 4

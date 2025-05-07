@@ -1,13 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
-public class Health : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [Header ("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth {get; private set; }
     private Animator anim;
-    private bool dead;
+    public bool dead;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
@@ -15,6 +15,10 @@ public class Health : MonoBehaviour
     private SpriteRenderer spriteRend;
 
     private bool invulnerable;
+
+    // Evento que será chamado quando o player morrer
+    public delegate void PlayerDeathEvent(bool isDead);
+    public static event PlayerDeathEvent OnPlayerDeath;
 
     private void Awake()
     {
@@ -30,6 +34,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
+            // Player foi atingido, mas ainda está vivo
             anim.SetTrigger("hurt");
             StartCoroutine(Invunerability());
         }
@@ -38,18 +43,19 @@ public class Health : MonoBehaviour
             if (!dead)
             {
                 anim.SetTrigger("die");
-
+                
+                // Desabilitar movimento do player
                 if(GetComponent<PlayerMovement>() != null)
                     GetComponent<PlayerMovement>().enabled = false;
-
-                if(GetComponentInParent<EnemyPatrol>() != null)
-                    GetComponentInParent<EnemyPatrol>().enabled = false; // ajustar aqui
-
-                if(GetComponent<MeleeEnemy>() != null)
-                    GetComponent<MeleeEnemy>().enabled = false;
-
-
+                
                 dead = true;
+                
+                // Dispara o evento de morte do player
+                // Qualquer objeto (incluindo o boss) que estiver "ouvindo" este evento será notificado
+                if (OnPlayerDeath != null)
+                {
+                    OnPlayerDeath(dead);
+                }
             }
         }
     }
@@ -67,5 +73,21 @@ public class Health : MonoBehaviour
         }
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
+    }
+
+    public bool IsDead()
+    {
+        return dead;
+    }
+    
+    // Método para redefinir player após game over
+    public void ResetPlayer()
+    {
+        dead = false;
+        currentHealth = startingHealth;
+        
+        // Reativa o componente de movimento
+        if(GetComponent<PlayerMovement>() != null)
+            GetComponent<PlayerMovement>().enabled = true;
     }
 }

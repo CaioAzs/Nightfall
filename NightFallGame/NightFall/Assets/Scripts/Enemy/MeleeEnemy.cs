@@ -10,13 +10,32 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
     private Animator anim;
-    private Health playerHealth;
-    private EnemyPatrol enemyPatrol;
+    private PlayerHealth playerHealth; // Modificado para usar PlayerHealth
+    [SerializeField] private EnemyPatrol enemyPatrol;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        enemyPatrol = GetComponentInParent<EnemyPatrol>(); // ajustar aqui
+        
+        if (enemyPatrol == null)
+        {
+            // Tenta encontrar no próprio objeto
+            enemyPatrol = GetComponent<EnemyPatrol>();
+            
+            // Tenta encontrar no objeto pai
+            if (enemyPatrol == null && transform.parent != null)
+            {
+                enemyPatrol = transform.parent.GetComponent<EnemyPatrol>();
+            }
+            
+            // Tenta encontrar por tag (como último recurso)
+            if (enemyPatrol == null)
+            {
+                GameObject patrolObj = GameObject.FindGameObjectWithTag("EnemyPatrol");
+                if (patrolObj != null)
+                    enemyPatrol = patrolObj.GetComponent<EnemyPatrol>();
+            }
+        }
     }
 
     private void Update()
@@ -43,10 +62,19 @@ public class MeleeEnemy : MonoBehaviour
             new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
             0, Vector2.left, 0, playerLayer);
 
-        if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
+        if (hit.collider != null){
+            // Modificado para usar PlayerHealth em vez de Health
+            PlayerHealth detectedHealth = hit.transform.GetComponent<PlayerHealth>();
 
-        return hit.collider != null;
+            if(detectedHealth != null && detectedHealth.currentHealth > 0){
+                playerHealth = detectedHealth;
+                return true;
+            } else{
+                return false;
+            }
+        }
+
+        return false;
     }
 
     private void OnDrawGizmos()
@@ -58,7 +86,19 @@ public class MeleeEnemy : MonoBehaviour
 
     private void DamagePlayer()
     {
-        if (PlayerInSight())
+        if(PlayerInSight() && playerHealth != null && playerHealth.currentHealth > 0){
             playerHealth.TakeDamage(damage);
+        }
+    }
+    
+    // Verificar se o inimigo está morto (útil para outros scripts)
+    public bool IsEnemyDead()
+    {
+        EnemyHealth health = GetComponent<EnemyHealth>();
+        if (health != null)
+        {
+            return health.IsDead();
+        }
+        return false;
     }
 }
