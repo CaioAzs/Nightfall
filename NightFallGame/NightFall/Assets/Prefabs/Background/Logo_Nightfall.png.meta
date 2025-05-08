@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Logo_Nightfall_0: 624070455593670175
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
