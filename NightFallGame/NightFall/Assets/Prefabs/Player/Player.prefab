@@ -229,8 +229,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 4
+  dead: 0
   iFramesDuration: 2
   numberOfFlashes: 3
+  somMorte: {fileID: 8300000, guid: 1be6a1d6d82217346bcceb7d49f322a8, type: 3}
+  volumeSom: 1
 --- !u!1 &4239500249381354141
 GameObject:
   m_ObjectHideFlags: 0

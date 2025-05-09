@@ -8,6 +8,9 @@ TagManager:
   - Ground
   - EnemyPatrol
   - Boss
+  - PlayerHealthBar
+  - BossHealthBar
+  - BateriaUI
   layers:
   - Default
   - TransparentFX

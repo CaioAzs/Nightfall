@@ -7,6 +7,12 @@ public class BossHealth : MonoBehaviour
     public int health = 12;
     public int enrageThreshold = 6;
     public bool isInvulnerable = false;
+    
+    [Header("Efeitos de Som")]
+    public AudioClip somMorte; // Som quando o boss morre
+    [Range(0f, 1f)]
+    public float volumeSom = 1.0f; // Volume do som
+    
     private bool isEnraged = false;
     private bool isDead = false;
     private bool isHurt = false; // Controla se o boss está atualmente na animação de dano
@@ -61,6 +67,19 @@ public class BossHealth : MonoBehaviour
     {
         if(!playerDead){
             isDead = true;
+            
+            // Parar a música ambiente
+            MusicaAmbiente musicaAmbiente = FindObjectOfType<MusicaAmbiente>();
+            if (musicaAmbiente != null)
+            {
+                musicaAmbiente.PararMusica();
+            }
+            
+            // Tocar som de morte do boss
+            if (somMorte != null)
+            {
+                AudioSource.PlayClipAtPoint(somMorte, transform.position, volumeSom);
+            }
         
             // Desativar componentes de comportamento do boss
             var bossComponents = GetComponents<MonoBehaviour>();
@@ -78,9 +97,63 @@ public class BossHealth : MonoBehaviour
             }
             
             // Acionar animação de morte
-            animator.SetTrigger("Die");  
+            animator.SetTrigger("Die");
+            
+            // Desabilitar ações do player
+            DesabilitarAcoesDoPlayer();
         }
              
+    }
+    
+    // Método para desabilitar todas as ações do player
+    private void DesabilitarAcoesDoPlayer()
+    {
+        // Encontrar o player
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        if (player != null)
+        {
+            // Desativar movimentos do player
+            var playerMovement = player.GetComponent<PlayerMovement>();
+            if (playerMovement != null)
+                playerMovement.enabled = false;
+            
+            // Desativar Rigidbody2D para impedir movimento físico
+            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.linearVelocity = Vector2.zero;
+                rb.isKinematic = true;
+            }
+            
+            // Desativar todos os MonoBehaviours que têm "Player" no nome
+            // exceto PlayerHealth para manter a vida
+            MonoBehaviour[] playerComponents = player.GetComponents<MonoBehaviour>();
+            foreach (var component in playerComponents)
+            {
+                string componentName = component.GetType().Name;
+                if (componentName.Contains("Player") && componentName != "PlayerHealth")
+                {
+                    component.enabled = false;
+                }
+            }
+            
+            // Opcional: mudar a animação do player para "idle" ou outra apropriada
+            Animator playerAnim = player.GetComponent<Animator>();
+            if (playerAnim != null)
+            {
+                // Resetar todos os triggers de animação que você conhece
+                playerAnim.ResetTrigger("hurt");
+                playerAnim.ResetTrigger("die");
+                
+                // Tentar ir para uma animação idle
+                try {
+                    playerAnim.Play("Idle"); // Ou o nome da sua animação idle
+                } catch {
+                    // Ignora se a animação não existir
+                }
+            }
+        }
     }
 
     public bool IsEnraged()

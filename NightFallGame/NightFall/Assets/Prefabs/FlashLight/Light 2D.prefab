@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3440475270969537030}
   - component: {fileID: 9008083939313145299}
+  - component: {fileID: 8317352449138219012}
   m_Layer: 0
   m_Name: Light 2D
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.59, y: -2.38, z: -0.15}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6666665, y: 1.6666665, z: 1.6666665}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,3 +85,27 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &8317352449138219012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514911786195567738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37bb4fc4aa9bfd6459b486fde38878ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lanterna: {fileID: 9008083939313145299}
+  intervaloTempoSegundos: 15
+  quantidadeDiminuir: 1
+  tamanhoMinimoOuter: 1
+  tamanhoMaximoOuter: 4
+  somMonstro: {fileID: 8300000, guid: 0de9bce3e5742cd438eddf3bfb4f92b6, type: 3}
+  somMorteBateria: {fileID: 8300000, guid: 1be6a1d6d82217346bcceb7d49f322a8, type: 3}
+  volumeSom: 3
+  atrasoEntreRuidoEMorte: 2
+  tamanhoOuterAposMorte: 2
+  velocidadeIluminacao: 1
+  playerHealth: {fileID: 0}

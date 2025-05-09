@@ -236,3 +236,7 @@ MonoBehaviour:
   health: 12
   enrageThreshold: 6
   isInvulnerable: 0
+  somMorte: {fileID: 8300000, guid: 7cd17b68c75b2bb47b4f7cbd2f679afe, type: 3}
+  somDano: {fileID: 0}
+  somRaiva: {fileID: 0}
+  volumeSom: 1
