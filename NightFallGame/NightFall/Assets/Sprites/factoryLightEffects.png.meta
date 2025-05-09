@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      factoryLightEffects_0: 7497754770169248434
+      factoryLightEffects_1: 2941700044683653871
+      factoryLightEffects_2: 5293025304744527160
+      factoryLightEffects_3: -948790874955900261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -40,23 +40,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            if (!dead)
-            {
-                anim.SetTrigger("die");
-                
-                // Desabilitar movimento do player
-                if(GetComponent<PlayerMovement>() != null)
-                    GetComponent<PlayerMovement>().enabled = false;
-                
-                dead = true;
-                
-                // Dispara o evento de morte do player
-                // Qualquer objeto (incluindo o boss) que estiver "ouvindo" este evento será notificado
-                if (OnPlayerDeath != null)
-                {
-                    OnPlayerDeath(dead);
-                }
-            }
+            PlayerDead();
         }
     }
 
@@ -89,5 +73,27 @@ public class PlayerHealth : MonoBehaviour
         // Reativa o componente de movimento
         if(GetComponent<PlayerMovement>() != null)
             GetComponent<PlayerMovement>().enabled = true;
+    }
+
+
+    public void PlayerDead(){
+        if (!dead)
+        {
+
+            anim.SetTrigger("die");
+            
+            // Desabilitar movimento do player
+            if(GetComponent<PlayerMovement>() != null)
+                GetComponent<PlayerMovement>().enabled = false;
+            
+            dead = true;
+            
+            // Dispara o evento de morte do player
+            // Qualquer objeto (incluindo o boss) que estiver "ouvindo" este evento será notificado
+            if (OnPlayerDeath != null)
+            {
+                OnPlayerDeath(dead);
+            }
+        }
     }
 }
