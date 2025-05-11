@@ -9,6 +9,9 @@ TagManager:
   - EnemyPatrol
   - Boss
   - Elevator
+  - PlayerHealthBar
+  - BossHealthBar
+  - BateriaUI
   layers:
   - Default
   - TransparentFX

@@ -13,8 +13,14 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float iFramesDuration;
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRend;
+    
+    [Header("Efeitos de Som")]
+    public AudioClip somMorte; // Som quando o player morre
+    [Range(0f, 1f)]
+    public float volumeSom = 1.0f; // Volume do som
 
     private bool invulnerable;
+    private bool sequenciaMorteEmAndamento = false;
 
     // Evento que será chamado quando o player morrer
     public delegate void PlayerDeathEvent(bool isDead);
@@ -29,7 +35,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(float _damage)
     {
-        if (invulnerable) return;
+        if (invulnerable || dead || sequenciaMorteEmAndamento) return;
+        
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
         if (currentHealth > 0)
@@ -40,23 +47,8 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            if (!dead)
-            {
-                anim.SetTrigger("die");
-                
-                // Desabilitar movimento do player
-                if(GetComponent<PlayerMovement>() != null)
-                    GetComponent<PlayerMovement>().enabled = false;
-                
-                dead = true;
-                
-                // Dispara o evento de morte do player
-                // Qualquer objeto (incluindo o boss) que estiver "ouvindo" este evento será notificado
-                if (OnPlayerDeath != null)
-                {
-                    OnPlayerDeath(dead);
-                }
-            }
+            // Iniciar sequência de morte
+            SequenciaMorte();
         }
     }
 
@@ -74,6 +66,23 @@ public class PlayerHealth : MonoBehaviour
         Physics2D.IgnoreLayerCollision(10, 11, false);
         invulnerable = false;
     }
+    
+    // Sequência de morte do player
+    private void SequenciaMorte()
+    {
+        sequenciaMorteEmAndamento = true;
+        
+        // 1. Reproduzir o som de morte
+        if (somMorte != null)
+        {
+            AudioSource.PlayClipAtPoint(somMorte, transform.position, volumeSom);
+        }
+        
+        // 2. Acionar a morte do player
+        PlayerDead();
+        
+        sequenciaMorteEmAndamento = false;
+    }
 
     public bool IsDead()
     {
@@ -84,10 +93,31 @@ public class PlayerHealth : MonoBehaviour
     public void ResetPlayer()
     {
         dead = false;
+        sequenciaMorteEmAndamento = false;
         currentHealth = startingHealth;
         
         // Reativa o componente de movimento
         if(GetComponent<PlayerMovement>() != null)
             GetComponent<PlayerMovement>().enabled = true;
+    }
+
+    public void PlayerDead(){
+        if (!dead)
+        {
+            anim.SetTrigger("die");
+            
+            // Desabilitar movimento do player
+            if(GetComponent<PlayerMovement>() != null)
+                GetComponent<PlayerMovement>().enabled = false;
+            
+            dead = true;
+            
+            // Dispara o evento de morte do player
+            // Qualquer objeto (incluindo o boss) que estiver "ouvindo" este evento será notificado
+            if (OnPlayerDeath != null)
+            {
+                OnPlayerDeath(dead);
+            }
+        }
     }
 }

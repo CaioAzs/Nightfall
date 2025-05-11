@@ -81,7 +81,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 4723107735738678597, guid: 6cb34aa809228734abd401321db83679, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -236,3 +236,7 @@ MonoBehaviour:
   health: 12
   enrageThreshold: 6
   isInvulnerable: 0
+  somMorte: {fileID: 8300000, guid: 7cd17b68c75b2bb47b4f7cbd2f679afe, type: 3}
+  somDano: {fileID: 0}
+  somRaiva: {fileID: 0}
+  volumeSom: 1

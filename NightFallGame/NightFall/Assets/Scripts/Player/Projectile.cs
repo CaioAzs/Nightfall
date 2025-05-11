@@ -1,10 +1,16 @@
-
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private int damage = 1; // Dano que o projétil causa
+    
+    [Header("Efeitos de Som")]
+    [SerializeField] private AudioClip somDisparo; // Som do disparo
+    [SerializeField] private AudioClip somImpacto; // Som opcional para quando o projétil atinge algo
+    [Range(0f, 1f)]
+    [SerializeField] private float volumeSom = 0.5f; // Volume dos sons
+    
     private float direction;
     private bool hit;
     private float lifetime;
@@ -34,6 +40,12 @@ public class Projectile : MonoBehaviour
         hit = true;
         anim.SetTrigger("explode");
         boxCollider.enabled = false;
+        
+        // Reproduzir som de impacto (opcional)
+        if (somImpacto != null)
+        {
+            AudioSource.PlayClipAtPoint(somImpacto, transform.position, volumeSom);
+        }
         
         if (collision.CompareTag("Enemy"))
         {
@@ -95,6 +107,12 @@ public class Projectile : MonoBehaviour
         
         if (boxCollider != null)
             boxCollider.enabled = true;
+        
+        // Reproduzir som de disparo
+        if (somDisparo != null)
+        {
+            AudioSource.PlayClipAtPoint(somDisparo, transform.position, volumeSom);
+        }
         
         if (_direction > 0)
             transform.localScale = new Vector3(0.02f, 0.02f, 0.02f);

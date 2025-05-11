@@ -104,6 +104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  damage: 1
+  somDisparo: {fileID: 8300000, guid: 3822d13ecd965324d9766e854a2a23ff, type: 3}
+  somImpacto: {fileID: 0}
+  volumeSom: 1
 --- !u!61 &8473381193822730501
 BoxCollider2D:
   m_ObjectHideFlags: 0

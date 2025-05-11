@@ -10,6 +10,7 @@ public class DocumentoColetavel : MonoBehaviour
         {
             PainelDocumentoController painel = FindObjectOfType<PainelDocumentoController>();
             painel.MostrarDocumento(imagemDoDocumento);
+            //Aplicar lógica do contador dos documentos aqui
             Destroy(gameObject);
         }
     }
