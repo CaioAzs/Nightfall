@@ -93,9 +93,9 @@ public class EnemyPatrol : MonoBehaviour
         if (enemy != null)
         {
             if (movingLeft)
-                enemy.rotation = Quaternion.Euler(0, 180, 0); // Virado para a esquerda
+                enemy.rotation = Quaternion.Euler(0, 0, 0); // Virado para a esquerda
             else
-                enemy.rotation = Quaternion.Euler(0, 0, 0);
+                enemy.rotation = Quaternion.Euler(0, -180, 0);
         }
     }
 }
