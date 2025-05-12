@@ -402,9 +402,11 @@ PlayableDirector:
     value: {fileID: 1185972506}
   - key: {fileID: -5823673513634248233, guid: 783a68b332f3a0047adf37a924552445, type: 2}
     value: {fileID: 1185972506}
-  - key: {fileID: -2308044055573242300, guid: 783a68b332f3a0047adf37a924552445, type: 2}
+  - key: {fileID: 7576620457346649257, guid: 783a68b332f3a0047adf37a924552445, type: 2}
     value: {fileID: 9034654}
-  - key: {fileID: 6857003495751518225, guid: 783a68b332f3a0047adf37a924552445, type: 2}
+  - key: {fileID: 6900492625474031026, guid: 783a68b332f3a0047adf37a924552445, type: 2}
+    value: {fileID: 9034654}
+  - key: {fileID: 5311008947736593751, guid: 783a68b332f3a0047adf37a924552445, type: 2}
     value: {fileID: 9034654}
   m_ExposedReferences:
     m_References: []
