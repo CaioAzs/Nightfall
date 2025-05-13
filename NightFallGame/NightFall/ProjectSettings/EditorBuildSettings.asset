@@ -23,6 +23,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: b9e65305e24971e49b4d572660198be1
+  - enabled: 1
+    path: Assets/Scenes/Elevator_Level1-2.unity
+    guid: f17bdf371a0b22345870aeb0b416ebfd
+  - enabled: 1
+    path: Assets/Scenes/Elevator_Level2-3.unity
+    guid: adbf1b5c90bea9149b1fb7225267f7d1
+  - enabled: 1
+    path: Assets/Scenes/Win_Game.unity
+    guid: 3fd0de78978a8024fa0376edf19dfd19
+  - enabled: 1
+    path: Assets/Scenes/Lose_Game.unity
+    guid: cb2217982e8679f4fb620378ae2e2433
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -5,11 +5,11 @@ public class SceneController : MonoBehaviour
 {
     public void LoadCena1()
     {
-        SceneManager.LoadScene("Fase1_Spaw");
+        SceneManager.LoadScene("Level1");
     }
 
     public void LoadCena2()
     {
-        SceneManager.LoadScene("História");
+        SceneManager.LoadScene("Level2");
     }
 }

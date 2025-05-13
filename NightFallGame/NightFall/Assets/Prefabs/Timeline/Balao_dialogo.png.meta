@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Balao_dialogo_0: -7772512702324747675
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

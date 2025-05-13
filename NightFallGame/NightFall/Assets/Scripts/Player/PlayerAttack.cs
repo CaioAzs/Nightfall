@@ -15,6 +15,9 @@ public class PlayerAttack : MonoBehaviour
     }
 
     private void Update(){
+        if (PainelDocumentoController.documentoAberto)
+            return;
+
         if(Input.GetMouseButton(0) && cooldownTimer > attackCooldown && playerMovement.canAttack())
             Attack();
 

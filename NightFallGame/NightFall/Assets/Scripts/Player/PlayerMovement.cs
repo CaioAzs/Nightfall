@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update(){
         //if(dead) return;
+        if (PainelDocumentoController.documentoAberto)
+            return;
 
         inFloor = Physics2D.Linecast(transform.position, groundCheck.position, groundLayer);
         Debug.DrawLine(transform.position, groundCheck.position, Color.blue);

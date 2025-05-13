@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public float lanternaMinOuter = 1f; // Valor mínimo da lanterna
     public float lanternaMaxOuter = 4f; // Valor máximo da lanterna
     public int bossMaxHealth = 12; // Valor máximo de saúde do boss
+
+    [Header("Chaves de Elevador")]
+    public int chavesElevadorColetadas = 0;
     
     // Variável para persistência entre cenas
     [HideInInspector] public float playerSavedHealth;
@@ -192,6 +195,14 @@ public class GameManager : MonoBehaviour
             else
                 bossHealthBar.gameObject.SetActive(active);
         }
+    }
+
+    public void AdicionarChaveElevador()
+    {
+        chavesElevadorColetadas++;
+        Debug.Log("Chaves de elevador coletadas: " + chavesElevadorColetadas);
+        
+        // Aqui você pode atualizar a UI, ativar elevadores, etc.
     }
     
     private void OnDestroy()
