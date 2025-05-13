@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class ControladorDialogo : MonoBehaviour
+public class ControladorDialogoDeath : MonoBehaviour
 {
     public Text textoDialogo;
     public GameObject painelDialogo;
@@ -88,7 +88,7 @@ public class ControladorDialogo : MonoBehaviour
         string textoCompleto = string.Join("\n\n", falas);
         
         // Mostra o texto completo com a mensagem de clique
-        textoDialogo.text = textoCompleto + "\n\n<color=#FFFF00>Clique para começar...</color>";
+        textoDialogo.text = textoCompleto + "\n\n<color=#FFFF00>Clique para continuar...</color>";
         
         // Muda para o estado de pronto para avançar
         estadoAtual = EstadoDialogo.ProntoParaAvancar;
@@ -106,7 +106,7 @@ public class ControladorDialogo : MonoBehaviour
         }
         
         // Quando termina de digitar automaticamente, adiciona a mensagem de clique
-        textoDialogo.text += "\n\n<color=#FFFF00>Clique para começar...</color>";
+        textoDialogo.text += "\n\n<color=#FFFF00>Clique para continuar...</color>";
         
         // Muda o estado para pronto para avançar
         estadoAtual = EstadoDialogo.ProntoParaAvancar;

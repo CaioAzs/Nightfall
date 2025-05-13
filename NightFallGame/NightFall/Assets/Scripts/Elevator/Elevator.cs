@@ -23,7 +23,7 @@ public class Elevator : MonoBehaviour
 
             if (keyCount >= 1)
             {
-                sceneController.LoadCena2();
+                sceneController.LoadLevel2();
             }
             else
             {

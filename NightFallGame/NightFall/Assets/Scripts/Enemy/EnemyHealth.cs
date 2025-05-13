@@ -22,19 +22,19 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
-        
+
         // Tenta obter o componente EnemyPatrol se não foi atribuído no inspector
         if (enemyPatrol == null)
         {
             // Tenta encontrar no próprio objeto
             enemyPatrol = GetComponent<EnemyPatrol>();
-            
+
             // Tenta encontrar no objeto pai
             if (enemyPatrol == null && transform.parent != null)
             {
                 enemyPatrol = transform.parent.GetComponent<EnemyPatrol>();
             }
-            
+
             // Tenta encontrar por tag (como último recurso)
             if (enemyPatrol == null)
             {
@@ -62,19 +62,19 @@ public class EnemyHealth : MonoBehaviour
             {
                 // Inimigo morreu
                 anim.SetTrigger("die");
-                
+
                 // Desabilitar componentes de IA e comportamento
                 if(enemyPatrol != null) 
                     enemyPatrol.enabled = false;
 
                 if(GetComponent<MeleeEnemy>() != null)
                     GetComponent<MeleeEnemy>().enabled = false;
-                
+
                 // Desativar todos os colliders
                 DisableColliders();
-                
+
                 // Opcional: adicionar pontuação, spawnar item, etc.
-                
+
                 dead = true;
             }
         }
@@ -112,8 +112,7 @@ public class EnemyHealth : MonoBehaviour
     {
         return dead;
     }
-    
-    
+
     // // Se precisar destruir o inimigo após algum tempo
     // public void DestroyAfterDelay(float delay)
     // {

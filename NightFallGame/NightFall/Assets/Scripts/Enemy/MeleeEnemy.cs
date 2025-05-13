@@ -16,18 +16,18 @@ public class MeleeEnemy : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        
+
         if (enemyPatrol == null)
         {
             // Tenta encontrar no próprio objeto
             enemyPatrol = GetComponent<EnemyPatrol>();
-            
+
             // Tenta encontrar no objeto pai
             if (enemyPatrol == null && transform.parent != null)
             {
                 enemyPatrol = transform.parent.GetComponent<EnemyPatrol>();
             }
-            
+
             // Tenta encontrar por tag (como último recurso)
             if (enemyPatrol == null)
             {
@@ -90,7 +90,7 @@ public class MeleeEnemy : MonoBehaviour
             playerHealth.TakeDamage(damage);
         }
     }
-    
+
     // Verificar se o inimigo está morto (útil para outros scripts)
     public bool IsEnemyDead()
     {
