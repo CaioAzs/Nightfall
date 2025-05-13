@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lanterna: {fileID: 9008083939313145299}
-  intervaloTempoSegundos: 15
+  intervaloTempoSegundos: 3
   quantidadeDiminuir: 1
   tamanhoMinimoOuter: 1
   tamanhoMaximoOuter: 4

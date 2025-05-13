@@ -16,6 +16,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private EnemyPatrol enemyPatrol;
 
     private bool invulnerable;
+    private bool playerIsDead = false;
 
     private void Awake()
     {
@@ -44,10 +45,23 @@ public class EnemyHealth : MonoBehaviour
             }
         }
     }
+    
+    private void OnEnable()
+    {
+        // Inscrever no evento de morte do player
+        PlayerHealth.OnPlayerDeath += OnPlayerDeath;
+    }
+    
+    private void OnDisable()
+    {
+        // Cancelar inscrição para evitar memory leaks
+        PlayerHealth.OnPlayerDeath -= OnPlayerDeath;
+    }
 
     public void TakeDamage(float _damage)
     {
-        if (invulnerable || dead) return;
+        if (invulnerable || dead || playerIsDead) return;
+        
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
 
         if (currentHealth > 0)
@@ -79,12 +93,72 @@ public class EnemyHealth : MonoBehaviour
             }
         }
     }
+    
+    // Método que será chamado quando o player morrer
+    private void OnPlayerDeath(bool isDead)
+    {
+        if (isDead && !this.dead) // Se o player morreu e este inimigo não está morto
+        {
+            playerIsDead = true;
+            
+            // Desativa o patrol do inimigo
+            if (enemyPatrol != null)
+                enemyPatrol.enabled = false;
+            
+            // Desativa o componente MeleeEnemy para parar ataques
+            if (GetComponent<MeleeEnemy>() != null)
+                GetComponent<MeleeEnemy>().enabled = false;
+            
+            // Reseta todos os triggers e ativa a animação de idle
+            if (anim != null)
+            {
+                // Reseta todos os triggers que possam estar ativos
+                anim.ResetTrigger("hurt");
+                anim.ResetTrigger("meleeAttack");
+                
+                // Força a transição para idle
+                anim.SetBool("moving", false);
+                
+                // Se o animator tiver um parâmetro "idle", ative-o
+                // Isso depende da estrutura do seu Animator
+                try 
+                {
+                    anim.Play("Idle"); // Tenta tocar diretamente a animação Idle
+                }
+                catch
+                {
+                    // Ignora se a animação não existir
+                    Debug.LogWarning("Animação 'Idle' não encontrada para o inimigo: " + gameObject.name);
+                }
+            }
+            
+            // Desabilita outros componentes que possam afetar o movimento
+            MonoBehaviour[] components = GetComponents<MonoBehaviour>();
+            foreach (var component in components)
+            {
+                string componentName = component.GetType().Name;
+                // Desativa componentes relacionados a comportamento, exceto este script
+                if ((componentName.Contains("Enemy") && componentName != "EnemyHealth") || 
+                     componentName.Contains("AI") || 
+                     componentName.Contains("Controller"))
+                {
+                    component.enabled = false;
+                }
+            }
+        }
+    }
 
     private void DisableColliders()
     {
         // Desativar todos os colliders do inimigo
         Collider2D[] colliders = GetComponents<Collider2D>();
         foreach (Collider2D collider in colliders)
+        {
+            collider.enabled = false;
+        }
+        
+        // Também desativa colliders nos filhos
+        foreach (Collider2D collider in GetComponentsInChildren<Collider2D>())
         {
             collider.enabled = false;
         }
@@ -112,13 +186,4 @@ public class EnemyHealth : MonoBehaviour
     {
         return dead;
     }
-
-    // // Se precisar destruir o inimigo após algum tempo
-    // public void DestroyAfterDelay(float delay)
-    // {
-    //     if (dead)
-    //     {
-    //         Destroy(gameObject, delay);
-    //     }
-    // }
 }
