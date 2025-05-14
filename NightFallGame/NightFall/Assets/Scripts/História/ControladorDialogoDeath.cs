@@ -6,17 +6,17 @@ public class ControladorDialogoDeath : MonoBehaviour
 {
     public Text textoDialogo;
     public GameObject painelDialogo;
-    
+
     [Header("Configurações")]
     [TextArea(3, 10)]
     public string[] falas;
     [SerializeField] private float velocidadeTexto = 0.08f;
     
-    [Header("Controle de Cena")]
-    [SerializeField] private SceneController sceneController;
-    [SerializeField] private bool carregarFase1AoFinalizar = true;
-    
-    // Apenas dois estados: Digitando e Pronto
+    [Header("Restauração de Estado")]
+    [SerializeField] private bool resetarPlayerAoTerminar = true;
+    [SerializeField] private bool resetarGameManagerAoTerminar = true;
+    [SerializeField] private bool reativarMusicaAoTerminar = true;
+
     private enum EstadoDialogo { Digitando, ProntoParaAvancar }
     private EstadoDialogo estadoAtual = EstadoDialogo.Digitando;
     private Coroutine rotinaDigitacao = null;
@@ -24,23 +24,22 @@ public class ControladorDialogoDeath : MonoBehaviour
     void Start()
     {
         painelDialogo.SetActive(true);
+        IniciarDialogo();
         
-        if (sceneController == null)
+        // Garantir que a música está tocando durante o diálogo
+        if (reativarMusicaAoTerminar)
         {
-            sceneController = FindObjectOfType<SceneController>();
-            if (sceneController == null)
+            MusicaAmbiente musicaAmbiente = FindObjectOfType<MusicaAmbiente>();
+            if (musicaAmbiente != null && !musicaAmbiente.GetComponent<AudioSource>().isPlaying)
             {
-                Debug.LogWarning("SceneController não encontrado!");
+                musicaAmbiente.TocarMusica();
             }
         }
-        
-        // Inicia a digitação do texto
-        IniciarDialogo();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
         {
             TratarClique();
         }
@@ -48,17 +47,12 @@ public class ControladorDialogoDeath : MonoBehaviour
 
     void TratarClique()
     {
-        Debug.Log("Clique detectado. Estado atual: " + estadoAtual);
-        
         switch (estadoAtual)
         {
             case EstadoDialogo.Digitando:
-                // Interrompe a digitação, mostra o texto completo e adiciona a mensagem de clique
                 CompletarDialogo();
                 break;
-                
             case EstadoDialogo.ProntoParaAvancar:
-                // Finaliza o diálogo e carrega a próxima cena
                 FinalizarDialogo();
                 break;
         }
@@ -67,64 +61,132 @@ public class ControladorDialogoDeath : MonoBehaviour
     void IniciarDialogo()
     {
         estadoAtual = EstadoDialogo.Digitando;
-        
-        // Cria um único texto combinando todas as falas
         string textoCompleto = string.Join("\n\n", falas);
-        
-        // Inicia a digitação
         rotinaDigitacao = StartCoroutine(DigitarTexto(textoCompleto));
     }
 
     void CompletarDialogo()
     {
-        // Interrompe a digitação se estiver em andamento
         if (rotinaDigitacao != null)
         {
             StopCoroutine(rotinaDigitacao);
             rotinaDigitacao = null;
         }
-        
-        // Combina todas as falas em um único texto
+
         string textoCompleto = string.Join("\n\n", falas);
-        
-        // Mostra o texto completo com a mensagem de clique
         textoDialogo.text = textoCompleto + "\n\n<color=#FFFF00>Clique para continuar...</color>";
-        
-        // Muda para o estado de pronto para avançar
         estadoAtual = EstadoDialogo.ProntoParaAvancar;
-        Debug.Log("Diálogo completo. Novo estado: ProntoParaAvancar");
     }
 
     IEnumerator DigitarTexto(string texto)
     {
         textoDialogo.text = "";
-        
+
         foreach (char letra in texto)
         {
             textoDialogo.text += letra;
             yield return new WaitForSeconds(velocidadeTexto);
         }
-        
-        // Quando termina de digitar automaticamente, adiciona a mensagem de clique
+
         textoDialogo.text += "\n\n<color=#FFFF00>Clique para continuar...</color>";
-        
-        // Muda o estado para pronto para avançar
         estadoAtual = EstadoDialogo.ProntoParaAvancar;
         rotinaDigitacao = null;
-        Debug.Log("Digitação concluída. Novo estado: ProntoParaAvancar");
     }
-    
+
     void FinalizarDialogo()
     {
-        Debug.Log("Finalizando diálogo e carregando próxima fase");
-        
-        if (carregarFase1AoFinalizar && sceneController != null)
+        // Resetar o player se necessário antes de mudar de cena
+        if (resetarPlayerAoTerminar)
         {
-            sceneController.LoadLevel1();
+            PrepararPlayerParaReinicio();
+        }
+        
+        // Resetar o GameManager se necessário
+        if (resetarGameManagerAoTerminar)
+        {
+            PrepararGameManagerParaReinicio();
+        }
+        
+        // Garantir que a música esteja tocando
+        if (reativarMusicaAoTerminar)
+        {
+            RestaurarMusica();
+        }
+        
+        // Aguardar um pequeno delay para garantir que tudo foi preparado
+        StartCoroutine(MudarParaTelaDerrota());
+    }
+    
+    private IEnumerator MudarParaTelaDerrota()
+    {
+        // Pequeno delay para garantir que as preparações foram concluídas
+        yield return new WaitForSeconds(0.2f);
+        
+        // Ir para a tela de derrota
+        SceneController.instance.LoadYouLose();
+    }
+    
+    private void PrepararPlayerParaReinicio()
+    {
+        PlayerHealth playerHealth = FindObjectOfType<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            Debug.Log("Resetando player antes da tela de derrota");
+            playerHealth.ResetPlayer();
         }
         else
         {
-            painelDialogo.SetActive(false);
+            Debug.LogWarning("PlayerHealth não encontrado para reset");
+        }
+    }
+    
+    private void PrepararGameManagerParaReinicio()
+    {
+        if (GameManager.Instance != null)
+        {
+            Debug.Log("Preparando GameManager para reinício do jogo");
+            
+            // Se tiver, use o método ForcarBuscaReferencias
+            // que adicionamos na implementação melhorada do GameManager
+            var forcarBuscaMethod = GameManager.Instance.GetType().GetMethod("ForcarBuscaReferencias");
+            if (forcarBuscaMethod != null)
+            {
+                forcarBuscaMethod.Invoke(GameManager.Instance, null);
+                Debug.Log("Método ForcarBuscaReferencias encontrado e chamado");
+            }
+            else
+            {
+                // Método alternativo se a função ForcarBuscaReferencias não estiver disponível
+                Debug.Log("Usando método alternativo para preparar GameManager");
+                GameManager.Instance.playerSavedHealth = GameManager.Instance.playerMaxHealth;
+                GameManager.Instance.AtualizarBarras();
+            }
+        }
+        else
+        {
+            Debug.LogWarning("GameManager não encontrado");
+        }
+    }
+    
+    private void RestaurarMusica()
+    {
+        MusicaAmbiente musicaAmbiente = FindObjectOfType<MusicaAmbiente>();
+        if (musicaAmbiente != null)
+        {
+            AudioSource audioSource = musicaAmbiente.GetComponent<AudioSource>();
+            if (audioSource != null)
+            {
+                if (!audioSource.isPlaying)
+                {
+                    Debug.Log("Reativando música ambiente");
+                    musicaAmbiente.TocarMusica();
+                }
+                else
+                {
+                    // Se já estiver tocando, garantir volume normal
+                    audioSource.volume = musicaAmbiente.volumeMusica;
+                }
+            }
         }
     }
 }

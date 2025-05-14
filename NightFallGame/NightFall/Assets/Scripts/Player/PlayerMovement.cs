@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update(){
         //if(dead) return;
-        if (PainelDocumentoController.documentoAberto)
+        if (PlayerInputManager.isInputBlocked || PainelDocumentoController.documentoAberto)
             return;
 
         inFloor = Physics2D.Linecast(transform.position, groundCheck.position, groundLayer);

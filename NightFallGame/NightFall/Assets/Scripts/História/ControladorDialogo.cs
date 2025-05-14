@@ -120,7 +120,7 @@ public class ControladorDialogo : MonoBehaviour
         
         if (carregarFase1AoFinalizar && sceneController != null)
         {
-            sceneController.LoadLevel1();
+            SceneController.instance.LoadLevel1();
         }
         else
         {

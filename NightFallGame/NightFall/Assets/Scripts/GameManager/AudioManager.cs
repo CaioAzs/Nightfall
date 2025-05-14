@@ -57,12 +57,16 @@ public class MusicaAmbiente : MonoBehaviour
     
     void Start()
     {
-        // Iniciar a música automaticamente se configurado
-        if (tocarAutomaticamente && musicaFase != null)
+        if (musicaFase != null && audioSource != null && !audioSource.isPlaying)
         {
-            TocarMusica();
+            if (tocarAutomaticamente)
+            {
+                TocarMusica();
+            }
         }
     }
+
+
     
     private void ConfigurarAudioSource()
     {

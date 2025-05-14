@@ -13,6 +13,9 @@ public class BossHealth : MonoBehaviour
     [Range(0f, 1f)]
     public float volumeSom = 1.0f; // Volume do som
     
+    [Header("Configurações de Vitória")]
+    [SerializeField] private float tempoAntesDeCarregarCena = 3.0f; // Tempo antes de carregar a cena de vitória
+    
     private bool isEnraged = false;
     private bool isDead = false;
     private bool isHurt = false; // Controla se o boss está atualmente na animação de dano
@@ -59,7 +62,27 @@ public class BossHealth : MonoBehaviour
 
         if (health <= 0 && !isDead)
         {
-            Die();
+            StartCoroutine(DieSoonThenLoadVictoryScene());
+        }
+    }
+
+    private IEnumerator DieSoonThenLoadVictoryScene()
+    {
+        // Aciona o método de morte
+        Die();
+        
+        // Espera um tempo para mostrar a animação de morte
+        yield return new WaitForSeconds(tempoAntesDeCarregarCena);
+        
+        // Carrega a cena de vitória
+        if (SceneController.instance != null)
+        {
+            SceneController.instance.LoadDialogueWinGame();
+            Debug.Log("Carregando cena de vitória...");
+        }
+        else
+        {
+            Debug.LogWarning("SceneController não encontrado! Não foi possível carregar a cena de vitória.");
         }
     }
 
@@ -99,7 +122,7 @@ public class BossHealth : MonoBehaviour
             // Acionar animação de morte
             animator.SetTrigger("Die");
             
-            // Desabilitar ações do player
+            // Desabilitar ações do player temporariamente para evitar interações durante a sequência
             DesabilitarAcoesDoPlayer();
         }
              
@@ -118,41 +141,8 @@ public class BossHealth : MonoBehaviour
             if (playerMovement != null)
                 playerMovement.enabled = false;
             
-            // Desativar Rigidbody2D para impedir movimento físico
-            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-            if (rb != null)
-            {
-                rb.linearVelocity = Vector2.zero;
-                rb.isKinematic = true;
-            }
-            
-            // Desativar todos os MonoBehaviours que têm "Player" no nome
-            // exceto PlayerHealth para manter a vida
-            MonoBehaviour[] playerComponents = player.GetComponents<MonoBehaviour>();
-            foreach (var component in playerComponents)
-            {
-                string componentName = component.GetType().Name;
-                if (componentName.Contains("Player") && componentName != "PlayerHealth")
-                {
-                    component.enabled = false;
-                }
-            }
-            
-            // Opcional: mudar a animação do player para "idle" ou outra apropriada
-            Animator playerAnim = player.GetComponent<Animator>();
-            if (playerAnim != null)
-            {
-                // Resetar todos os triggers de animação que você conhece
-                playerAnim.ResetTrigger("hurt");
-                playerAnim.ResetTrigger("die");
-                
-                // Tentar ir para uma animação idle
-                try {
-                    playerAnim.Play("Idle"); // Ou o nome da sua animação idle
-                } catch {
-                    // Ignora se a animação não existir
-                }
-            }
+            // Opcional: desativar outros componentes do player
+            // mas manter o PlayerHealth ativo
         }
     }
 

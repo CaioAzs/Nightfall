@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8950680414198383959, guid: ddd4ff43bc0e0fa439c55e10610f5307, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8548842485405785817, guid: ddd4ff43bc0e0fa439c55e10610f5307, type: 3}
@@ -380,7 +380,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -399,7 +399,7 @@ Transform:
   m_GameObject: {fileID: 1078459998}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1862, y: -5.35, z: 0}
+  m_LocalPosition: {x: -0.1862, y: -5.4, z: 0}
   m_LocalScale: {x: 10.283462, y: 0.9999571, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -414,7 +414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1086045547}
-  - component: {fileID: 1086045546}
+  - component: {fileID: 1086045548}
   m_Layer: 0
   m_Name: ControladorDialogo
   m_TagString: Untagged
@@ -422,25 +422,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1086045546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1086045545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3dadab3e1de178e43b5450bf9598473f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textoDialogo: {fileID: 1029616034}
-  painelDialogo: {fileID: 1445394111}
-  falas:
-  - "O que eles escodiam na ala B? Esses documentos est\xE3o muito estranhos."
-  velocidadeTexto: 0.08
-  sceneController: {fileID: 0}
-  carregarFase1AoFinalizar: 1
 --- !u!4 &1086045547
 Transform:
   m_ObjectHideFlags: 0
@@ -456,6 +437,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1086045548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086045545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fc21a5f240c7b44b53291ba684eedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textoDialogo: {fileID: 1029616034}
+  painelDialogo: {fileID: 1445394111}
+  falas:
+  - "O que eles escodiam na ala B? Esses documentos est\xE3o muito estranhos."
+  velocidadeTexto: 0.08
+  sceneController: {fileID: 0}
+  carregarFase1AoFinalizar: 1
 --- !u!1 &1113289061
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +516,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 4093480436322176185, guid: 24331e450f7512a41b07d56b94ad81b0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -536,12 +536,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113289061}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31, y: 0.06, z: 0}
-  m_LocalScale: {x: 9.23156, y: 4.7791896, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -400.12912, y: -224.97498, z: 0}
+  m_LocalScale: {x: 3.8464828, y: 1.9913288, z: 0.41666663}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1579441584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1445394111
 GameObject:
@@ -793,6 +793,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1445394112}
+  - {fileID: 1827036114}
+  - {fileID: 1113289063}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -860,7 +862,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8103168948674493137, guid: 140b4f10c2a28d7418933b834661f202, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -880,12 +882,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827036112}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -400.07913, y: -224.99998, z: 0}
+  m_LocalScale: {x: 0.41666663, y: 0.41666663, z: 0.41666663}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1579441584}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1845227562
 GameObject:
@@ -1029,8 +1031,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1845227565}
-  - {fileID: 1827036114}
-  - {fileID: 1113289063}
   - {fileID: 363752683}
   - {fileID: 1579441584}
   - {fileID: 1573782010}

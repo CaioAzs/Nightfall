@@ -54,4 +54,5 @@ MonoBehaviour:
   lanternaMinOuter: 1
   lanternaMaxOuter: 4
   bossMaxHealth: 12
+  chavesElevadorColetadas: 0
   playerSavedHealth: 0

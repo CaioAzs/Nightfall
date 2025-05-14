@@ -12,6 +12,8 @@ TagManager:
   - PlayerHealthBar
   - BossHealthBar
   - BateriaUI
+  - Interruptor
+  - Lanterna
   layers:
   - Default
   - TransparentFX
@@ -31,9 +33,9 @@ TagManager:
   - Camera
   - Document
   - KeyElevator
-  - 
-  - 
-  - 
+  - Interruptor
+  - GroundCheckBoss
+  - Boss
   - 
   - 
   - 
@@ -51,6 +53,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1810318989
+    locked: 0
+  - name: Boss
+    uniqueID: 62400561
     locked: 0
   m_RenderingLayers:
   - Default
